@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper ref="mySwiper" :options="swiperOption" v-if="showSwiper">
+    <swiper ref="mySwiper" :options="swiperOptions" v-if="showSwiper">
       <swiper-slide v-for="item in swiper" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" alt />
       </swiper-slide>
@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      swiperOption: {
+      swiperOptions: {
         pagination: {
           el: ".swiper-pagination",
           type: "progressbar",
@@ -32,9 +32,9 @@ export default {
     };
   },
   computed: {
-    showSwiper(){
-      return this.swiper.length
-    }
+    showSwiper() {
+      return this.swiper.length;
+    },
   },
   methods: {},
   watch: {},
@@ -53,7 +53,6 @@ export default {
     width: 100%;
   }
 }
-
 </style>
 
 <style >

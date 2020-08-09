@@ -3,6 +3,8 @@
     <HomeTopBar></HomeTopBar>
     <HomeSwiper :swiper="swiperList"></HomeSwiper>
     <HomeIcon :icon="iconList"></HomeIcon>
+    <HomeRecommend :recommend='recommendList'></HomeRecommend>
+    <HomeWeekend :weekend='weekendList'></HomeWeekend>
   </div>
 </template>
 
