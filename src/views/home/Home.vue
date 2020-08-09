@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <HomeTopBar></HomeTopBar>
-    <HomeSwiper :swiper='swiperList'></HomeSwiper>
-    <HomeIcon></HomeIcon>
+    <HomeSwiper :swiper="swiperList"></HomeSwiper>
+    <HomeIcon :icon="iconList"></HomeIcon>
   </div>
 </template>
 
@@ -23,8 +23,7 @@ export default {
     HomeSwiper,
     HomeIcon,
     HomeRecommend,
-    HomeWeekend
-
+    HomeWeekend,
   },
   data() {
     return {
