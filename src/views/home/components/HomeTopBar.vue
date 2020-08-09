@@ -7,10 +7,10 @@
       <div slot="center" class="input">
         <span class="iconfont icon-icon-test"></span>输入城市/景点/游玩主题
       </div>
-      <div slot="right" class="right">
+      <router-link to="/city" tag="div" slot="right" class="right">
         城市
         <span class="iconfont icon-icon-test2 icon2"></span>
-      </div>
+      </router-link>
     </TopBar>
   </div>
 </template>
