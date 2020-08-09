@@ -3,8 +3,8 @@
     <HomeTopBar></HomeTopBar>
     <HomeSwiper :swiper="swiperList"></HomeSwiper>
     <HomeIcon :icon="iconList"></HomeIcon>
-    <HomeRecommend :recommend='recommendList'></HomeRecommend>
-    <HomeWeekend :weekend='weekendList'></HomeWeekend>
+    <HomeRecommend :recommend="recommendList"></HomeRecommend>
+    <HomeWeekend :weekend="weekendList"></HomeWeekend>
   </div>
 </template>
 
@@ -18,6 +18,7 @@ import HomeWeekend from "./components/HomeWeekend";
 
 import { gethomedata } from "network/home";
 
+import { mapState } from "vuex";
 export default {
   name: "Home",
   components: {
@@ -33,14 +34,16 @@ export default {
       recommendList: [],
       iconList: [],
       weekendList: [],
+      lastCity: "",
     };
   },
   created() {
+    this.lastCity = this.city;
     this.gethome();
   },
   methods: {
     gethome() {
-      gethomedata().then((res) => {
+      gethomedata(this.city).then((res) => {
         const data = res.data.data.data;
         this.swiperList = data.swiperList;
         this.recommendList = data.recommendList;
@@ -48,6 +51,16 @@ export default {
         this.weekendList = data.weekendList;
       });
     },
+  },
+  mounted() {},
+  computed: {
+    ...mapState(["city"]),
+  },
+  activated() {
+    if (this.lastCity != this.city) {
+      this.lastCity = this.city;
+      this.gethome();
+    }
   },
 };
 </script>

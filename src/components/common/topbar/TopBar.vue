@@ -1,8 +1,14 @@
 <template>
-  <div class="navbar" >
-<div class="left"><slot name="left"></slot></div>
-<div class="center"><slot name="center"></slot></div>
-<div class="right"><slot name="right"></slot></div>
+  <div class="navbar">
+    <div class="left">
+      <slot name="left"></slot>
+    </div>
+    <div class="center">
+      <slot name="center"></slot>
+    </div>
+    <div class="right">
+      <slot name="right"></slot>
+    </div>
   </div>
 </template>
 
@@ -14,23 +20,24 @@ export default {
   },
   computed: {},
   methods: {},
-  watch: {}
+  watch: {},
 };
 </script>
 
 <style  scoped>
-.navbar{
+.navbar {
   display: flex;
   /* height: 44px; */
   height: 7vh;
   line-height: 7vh;
 }
-.left,.right{
-width: 60px;  
-/* background: aqua; */
+.left,
+.right {
+  min-width: 60px;
+  /* background: aqua; */
 }
-.center{
-  flex:1;
+.center {
+  flex: 1;
   text-align: center;
   /* background: antiquewhite; */
 }

@@ -2,8 +2,8 @@ import {
   required
 } from './axios'
 
-export function gethomedata() {
+export function gethomedata(city) {
   return required({
-    url: '/api/home'
+    url: `/api/home?city=${city}`
   })
 }

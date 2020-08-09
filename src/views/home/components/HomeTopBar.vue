@@ -8,7 +8,7 @@
         <span class="iconfont icon-icon-test"></span>输入城市/景点/游玩主题
       </div>
       <router-link to="/city" tag="div" slot="right" class="right">
-        城市
+        {{this.$store.state.city}}
         <span class="iconfont icon-icon-test2 icon2"></span>
       </router-link>
     </TopBar>
@@ -50,6 +50,7 @@ export default {
     color: #ccc;
     text-align: left;
     padding-left: 8px;
+    margin-right: 2px;
   }
   .right {
     text-align: center;
