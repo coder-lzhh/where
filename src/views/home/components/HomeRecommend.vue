@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="head">热销推荐</div>
-    <div class="con" v-for="item in recommend " :key="item.id">
+    <router-link to="/detail" tag="div" class="con" v-for="item in recommend " :key="item.id">
       <div class="imgs">
         <img :src="item.imgUrl" alt />
       </div>
@@ -10,7 +10,7 @@
         <div>{{item.desc}}</div>
         <div>查看详情</div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
